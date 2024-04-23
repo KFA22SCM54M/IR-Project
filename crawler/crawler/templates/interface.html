@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>IR Final Project</title>
+</head>
+<body>
+    <h1>Wikipedia crawler</h1>
+<hr>
+
+<div class = "wrapper">
+
+    <div class="data">
+        {% block body %}
+
+        <p>Hi. This is One_Piece Wiki crawler. The seed URL is https://en.wikipedia.org/wiki/One_Piece"</p>
+
+        <div class="content">
+
+            {% if corrections %}
+            
+                <small class="text-muted"> No results from the entered text. Did you mean the following:</small>
+                    
+                    {% for correction in corrections %}
+                    <ul>
+                        <li>For '{{correction.0}}' Did you mean any one of these: {{ correction.1 }}</li>
+                    </ul>
+                    {% endfor %}
+            {% endif %}
+        </div>
+        <form method="POST">
+            <table>
+                <tr>
+                    <td>Query: </td> <td> <input type="text" name="query" /> </td>
+                </tr>
+            </table>
+                <br>
+            <input class="button" type="submit" formaction="/search" value="Search">
+            <input class="button" type="submit" formaction="/index" value="Inverted Index Checker">
+        </form>
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>

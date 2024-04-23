@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inverted Index</title>
+</head>
+<body>
+    <h1>One_Piece Inverted Index</h1>
+<hr>
+
+<p>This is the inverted index for One_Piece Wikipedia. You can check the inverted index.</p>
+
+<a href="{{ url_for('interface') }}">Exit to Home</a>
+
+<div class = "wrapper">
+
+    <div class="data">
+        {% block body %}
+
+         {{ inverted_index }}
+
+        {% endblock %}
+    
+    </div>
+</div>
+</body>
+</html>

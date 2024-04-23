@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cosine Similarity function</title>
+</head>
+<body>
+    <h1>Search output </h1>
+<hr>
+
+<a href="{{ url_for('interface') }}">exit to Home</a>
+
+<div class = "wrapper">
+
+     <p>This is a legend of the documents. Feel free to highlight a specific wiki page and go to it</p>
+
+    <div class="data">
+        
+
+         {{ legend }}
+    
+    </div>
+
+    <br>
+
+    <p>This is the query vector along with its score</p>
+    
+    <div class="data">
+
+         {{ queryVector }}
+    
+    </div>
+
+    <br>
+
+    <p>These are the list of the most relevant documents based on cosine similarity.</p>
+    <p>Refer to the legend to discern which document corresponds with which document ID</p> 
+
+    <div class="data">
+
+         {{ scores }}
+    
+    </div>
+</div>
+</body>
+</html>
